@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dipak Jadhav — Lead Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:#0d0d0d;font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;}
+/* offset anchor targets below fixed nav+ticker (~105px) */
+section[id],div[id]{scroll-margin-top:110px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:12px 0;background:#fff;border-bottom:none;}
+.nav-links{display:flex;}
+.nav-links a.nav-cta{background:#0d0d0d;color:#fff;padding:10px 32px;font-size:11px;font-family:'DM Sans',sans-serif;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;display:inline-block;}
+.nav-links a.nav-cta:hover{background:#333;}
+
+/* TICKER */
+.ticker-wrap{position:fixed;top:45px;left:0;right:0;z-index:99;overflow:hidden;background:#e8ff47;border-bottom:1px solid #d8ef37;padding:6px 0;white-space:nowrap;}
+.ticker-inner{display:inline-block;animation:ticker 32s linear infinite;}
+.ticker-inner span{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#0d0d0d;margin:0 28px;}
+.ticker-inner span::before{content:'◆  ';}
+@keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:160px 40px 100px;border-bottom:1px solid #ebebeb;}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:#aaa;margin-bottom:30px;display:inline-flex;align-items:center;gap:12px;}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:32px;height:1px;background:#ddd;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(64px,11vw,140px);font-weight:900;line-height:0.88;letter-spacing:-0.02em;color:#0d0d0d;}
+.hero h1 em{font-style:italic;}
+.hero-role{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#bbb;margin-top:24px;}
+.hero-sub{font-size:16px;font-weight:300;color:#888;max-width:500px;margin:16px auto 0;line-height:1.75;}
+.hero-stats{display:flex;align-items:stretch;justify-content:center;border:1px solid #ebebeb;max-width:560px;margin:52px auto 0;}
+.stat{flex:1;padding:22px 24px;border-right:1px solid #ebebeb;text-align:center;}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;color:#0d0d0d;line-height:1;}
+.stat-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#bbb;margin-top:5px;}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:44px;flex-wrap:wrap;}
+.btn-primary{background:#0d0d0d;color:#fff;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:14px 32px;transition:background 0.2s;}
+.btn-primary:hover{background:#333;}
+.btn-outline{border:1px solid #0d0d0d;color:#0d0d0d;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;padding:14px 32px;transition:all 0.2s;}
+.btn-outline:hover{background:#0d0d0d;color:#fff;}
+
+/* SECTIONS */
+section{padding:96px 60px;border-bottom:1px solid #ebebeb;}
+.sec-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#bbb;margin-bottom:14px;text-align:center;}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:#0d0d0d;line-height:1.1;text-align:center;margin-bottom:12px;}
+.sec-title em{font-style:italic;}
+.amp{font-family:'DM Sans',sans-serif;font-style:normal;font-weight:300;font-size:0.85em;}
+.sec-rule{width:36px;height:1px;background:#0d0d0d;margin:0 auto 56px;}
+
+/* ABOUT */
+#about{background:#fafafa;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #ebebeb;max-width:900px;margin:0 auto;}
+.about-cell{background:#fff;padding:40px 40px;}
+.about-cell:first-child{border-right:1px solid #ebebeb;}
+.about-cell-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#ccc;margin-bottom:14px;}
+.about-cell p{font-size:15px;color:#555;line-height:1.8;}
+.skills-list{list-style:none;display:flex;flex-direction:column;gap:0;}
+.skills-list li{font-size:13px;color:#555;padding:9px 0;border-bottom:0.5px solid #f0f0f0;display:flex;align-items:center;gap:10px;}
+.skills-list li:last-child{border-bottom:none;}
+.skills-list li::before{content:'';display:inline-block;width:4px;height:4px;background:#e8ff47;border:1px solid #aaa;flex-shrink:0;}
+
+/* EXPERIENCE */
+#experience{background:#fff;}
+.exp-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:0;border:1px solid #ebebeb;}
+.exp-item{padding:36px 40px;border-bottom:1px solid #ebebeb;position:relative;transition:background 0.2s;}
+.exp-item:last-child{border-bottom:none;}
+.exp-item:hover{background:#fafafa;}
+.exp-header{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:6px;flex-wrap:wrap;}
+.exp-company{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#0d0d0d;}
+.exp-period{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#bbb;white-space:nowrap;padding-top:4px;}
+.exp-role{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:16px;}
+.exp-dots{display:flex;flex-direction:column;gap:7px;}
+.exp-dot{font-size:13px;color:#666;display:flex;align-items:baseline;gap:10px;line-height:1.5;}
+.exp-dot::before{content:'—';font-family:'DM Mono',monospace;font-size:10px;color:#ccc;flex-shrink:0;}
+.exp-current{position:absolute;top:36px;right:40px;}
+.exp-badge{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;background:#e8ff47;color:#0d0d0d;padding:3px 10px;}
+
+/* SKILLS — clean cards */
+#skills{background:#fafafa;}
+.skills-cards{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:#e0e0e0;border:1px solid #e0e0e0;}
+.skill-card{background:#fff;padding:36px 32px;display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden;opacity:0;transform:translateY(32px);transition:opacity 0.55s ease,transform 0.55s ease,background 0.2s;}
+.skill-card.card-visible{opacity:1;transform:translateY(0);}
+.skill-card:nth-child(1){transition-delay:0s;}
+.skill-card:nth-child(2){transition-delay:0.12s;}
+.skill-card:nth-child(3){transition-delay:0.24s;}
+.skill-card:nth-child(4){transition-delay:0.36s;}
+.skill-card:hover{background:#fff;}
+/* bottom bar slides on hover */
+.skill-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:#0d0d0d;transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease;}
+.skill-card:hover::before{transform:scaleX(1);}
+.skill-card-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#0d0d0d;line-height:1.2;position:relative;}
+.skill-card-divider{width:24px;height:1px;background:#e0e0e0;transition:width 0.4s ease,background 0.3s;}
+.skill-card:hover .skill-card-divider{width:48px;background:#0d0d0d;}
+.skill-back-tags{display:flex;flex-wrap:wrap;gap:6px;position:relative;}
+.skill-back-tag{font-size:11px;color:#666;border:0.5px solid #e8e8e8;padding:5px 11px;background:#fafafa;transition:all 0.18s ease;}
+.skill-back-tag:hover{background:#0d0d0d;color:#fff;border-color:#0d0d0d;transform:translateY(-1px);}
+
+/* EDUCATION */
+#education{background:#fff;}
+.edu-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:0;border:1px solid #ebebeb;}
+.edu-item{padding:28px 40px;border-bottom:1px solid #ebebeb;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;transition:background 0.2s;}
+.edu-item:last-child{border-bottom:none;}
+.edu-item:hover{background:#fafafa;}
+.edu-degree{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#0d0d0d;}
+.edu-school{font-size:13px;color:#888;margin-top:3px;}
+.edu-year{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.1em;color:#ccc;white-space:nowrap;}
+
+/* CONTACT */
+#contact{background:#fafafa;}
+.contact-grid{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;border:1px solid #ebebeb;}
+.contact-cell{background:#fff;padding:44px 40px;border-right:1px solid #ebebeb;border-bottom:none;transition:background 0.2s;}
+.contact-cell:hover{background:#fafafa;}
+.contact-cell:nth-child(2){border-right:none;}
+.c-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#ccc;margin-bottom:10px;}
+.c-val{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#0d0d0d;line-height:1.3;word-break:break-all;cursor:pointer;transition:color 0.2s;}
+.c-val:hover{color:#888;}
+.c-val a{text-decoration:none;color:inherit;}
+
+/* POPUP */
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:999;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
+.popup-overlay.open{display:flex;}
+.popup{background:#fff;width:100%;max-width:380px;border:1px solid #ebebeb;padding:40px 36px;position:relative;}
+.popup-close{position:absolute;top:16px;right:20px;font-size:20px;cursor:pointer;color:#aaa;background:none;border:none;line-height:1;transition:color 0.2s;}
+.popup-close:hover{color:#0d0d0d;}
+.popup-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#bbb;margin-bottom:8px;}
+.popup-number{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#0d0d0d;margin-bottom:24px;}
+.popup-actions{display:flex;flex-direction:column;gap:10px;}
+.popup-btn{display:flex;align-items:center;gap:12px;padding:15px 20px;font-size:12px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;font-family:'DM Sans',sans-serif;text-decoration:none;border:1px solid #ebebeb;color:#444;transition:all 0.2s;cursor:pointer;background:#fff;}
+.popup-btn.call{background:#0d0d0d;color:#fff;border-color:#0d0d0d;}
+.popup-btn.call:hover{background:#333;}
+.popup-btn.whatsapp{color:#25d366;border-color:#25d366;}
+.popup-btn.whatsapp:hover{background:#25d366;color:#fff;}
+.popup-btn svg{width:16px;height:16px;flex-shrink:0;}
+
+/* CTA */
+.cta-section{padding:96px 60px;background:#0d0d0d;text-align:center;position:relative;overflow:hidden;}
+.cta-ghost{position:absolute;font-family:'Playfair Display',serif;font-size:clamp(80px,14vw,190px);font-weight:900;color:rgba(255,255,255,0.03);left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;}
+.cta-label{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:18px;position:relative;}
+.cta-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,64px);font-weight:700;color:#fff;line-height:1.05;margin-bottom:16px;position:relative;}
+.cta-title em{font-style:italic;color:#e8ff47;}
+.cta-body{font-size:15px;color:#666;max-width:420px;margin:0 auto 40px;line-height:1.7;position:relative;}
+.cta-btn{display:inline-flex;align-items:center;gap:12px;background:#e8ff47;color:#0d0d0d;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:16px 36px;position:relative;transition:background 0.2s,transform 0.2s;}
+.cta-btn:hover{background:#f5ff70;transform:translateY(-2px);}
+.cta-btn svg{width:14px;height:14px;}
+
+/* FOOTER */
+footer{padding:26px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid #ebebeb;}
+.f-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#0d0d0d;}
+.f-note{font-size:11px;color:#ccc;letter-spacing:0.05em;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.hero-eyebrow{animation:fadeUp 0.55s ease 0.1s both;}
+.hero h1{animation:fadeUp 0.65s ease 0.22s both;}
+.hero-role,.hero-sub{animation:fadeUp 0.6s ease 0.36s both;}
+.hero-stats{animation:fadeUp 0.6s ease 0.48s both;}
+.hero-actions{animation:fadeUp 0.6s ease 0.58s both;}
+@keyframes popIn{from{opacity:0;transform:scale(0.96);}to{opacity:1;transform:scale(1);}}
+.popup-overlay.open .popup{animation:popIn 0.2s ease both;}
+
+/* scroll reveal — elements start hidden */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-28px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(28px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+
+/* stagger children */
+.stagger > *{opacity:0;transform:translateY(24px);transition:opacity 0.5s ease,transform 0.5s ease;}
+.stagger.visible > *:nth-child(1){opacity:1;transform:translateY(0);transition-delay:0s;}
+.stagger.visible > *:nth-child(2){opacity:1;transform:translateY(0);transition-delay:0.1s;}
+.stagger.visible > *:nth-child(3){opacity:1;transform:translateY(0);transition-delay:0.2s;}
+.stagger.visible > *:nth-child(4){opacity:1;transform:translateY(0);transition-delay:0.3s;}
+.stagger.visible > *:nth-child(5){opacity:1;transform:translateY(0);transition-delay:0.4s;}
+
+/* skill tag pop on hover */
+.skill-tag{transition:all 0.18s ease,transform 0.18s ease;}
+.skill-tag:hover{transform:translateY(-2px);}
+
+/* exp item left border slide */
+.exp-item{border-left:2px solid transparent;transition:background 0.2s,border-color 0.3s;}
+.exp-item:hover{border-left-color:#e8ff47;}
+
+/* edu item slide */
+.edu-item{transition:background 0.2s,padding-left 0.2s;}
+.edu-item:hover{padding-left:52px;}
+
+/* section title underline draw */
+.sec-rule{width:0;height:1px;background:#0d0d0d;margin:0 auto 56px;transition:width 0.7s ease;}
+.sec-rule.visible{width:36px;}
+
+/* stat number count-up placeholder */
+.stat-num{transition:transform 0.3s ease;}
+.stat:hover .stat-num{transform:scale(1.08);}
+
+/* about cell hover */
+.about-cell{transition:background 0.2s;}
+.about-cell:hover{background:#fafafa;}
+
+/* CTA btn pulse */
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,255,71,0.4);}50%{box-shadow:0 0 0 10px rgba(232,255,71,0);}}
+.cta-btn{animation:pulse 2.5s ease infinite;}
+.cta-btn:hover{animation:none;}
+
+@media(max-width:768px){
+  /* NAV */
+  nav{padding:10px 16px;}
+  .ticker-wrap{top:45px;}
+
+  /* HERO */
+  .hero{padding:110px 20px 64px;min-height:auto;}
+  .hero-eyebrow{font-size:9px;letter-spacing:0.14em;gap:8px;}
+  .hero-eyebrow::before,.hero-eyebrow::after{width:18px;}
+  .hero h1{font-size:clamp(56px,16vw,88px);}
+  .hero-role{font-size:10px;}
+  .hero-sub{font-size:14px;margin-top:12px;}
+  .hero-stats{max-width:100%;flex-wrap:wrap;}
+  .stat{flex:1 1 45%;padding:16px 12px;border-bottom:1px solid #ebebeb;}
+  .stat:nth-child(2){border-right:none;}
+  .stat:nth-child(3){border-bottom:none;}
+  .stat:nth-child(4){border-bottom:none;border-right:none;}
+  .stat-num{font-size:28px;}
+  .stat-label{font-size:9px;}
+  .hero-scroll{margin-top:40px;}
+
+  /* SECTIONS */
+  section{padding:56px 20px;}
+  .sec-title{font-size:clamp(28px,8vw,40px);}
+
+  /* ABOUT */
+  .about-grid{grid-template-columns:1fr;}
+  .about-cell:first-child{border-right:none;border-bottom:1px solid #ebebeb;}
+  .about-cell{padding:28px 24px;}
+
+  /* EXPERIENCE */
+  .exp-item{padding:24px 20px;}
+  .exp-company{font-size:17px;}
+  .exp-role{font-size:11px;}
+  .exp-period{font-size:9px;}
+  .exp-dot{font-size:12px;}
+  .exp-badge{font-size:8px;padding:2px 8px;}
+
+  /* SKILLS */
+  .skills-cards{grid-template-columns:1fr 1fr;}
+  .skill-card{padding:24px 18px;gap:14px;}
+  .skill-card-title{font-size:15px;}
+  .skill-back-tag{font-size:10px;padding:4px 8px;}
+
+  /* EDUCATION */
+  .edu-item{padding:20px 20px;flex-direction:column;align-items:flex-start;gap:6px;}
+  .edu-degree{font-size:15px;}
+  .edu-year{font-size:10px;}
+
+  /* CTA */
+  .cta-section{padding:56px 20px;}
+  .cta-title{font-size:clamp(28px,8vw,44px);}
+  .cta-body{font-size:14px;}
+  .cta-btn{padding:14px 28px;font-size:11px;}
+
+  /* CONTACT */
+  .contact-grid{grid-template-columns:1fr;}
+  .contact-cell{border-right:none!important;border-bottom:1px solid #ebebeb!important;padding:28px 24px;}
+  .contact-cell:last-child{border-bottom:none!important;}
+  .c-val{font-size:15px;word-break:break-all;}
+
+  /* POPUP */
+  .popup{padding:32px 24px;margin:16px;}
+
+  /* FOOTER */
+  footer{padding:20px;flex-direction:column;align-items:flex-start;gap:6px;}
+  .f-note{font-size:10px;}
+}
+
+@media(max-width:400px){
+  .hero h1{font-size:52px;}
+  .skills-cards{grid-template-columns:1fr;}
+  .stat{flex:1 1 100%;border-right:none!important;border-bottom:1px solid #ebebeb!important;}
+  .stat:last-child{border-bottom:none!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-links">
+    <a href="https://www.behance.net/dipakjadha5eab" target="_blank" class="nav-cta">Portfolio ↗</a>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span>Lead Graphic Designer</span><span>Brand Identity</span><span>Campaign Design</span><span>Print Production</span><span>CorelDRAW Advanced</span><span>Adobe Photoshop</span><span>8+ Years Experience</span><span>100+ Creatives / Month</span><span>Pune · India</span><span>Available for Opportunities</span>
+    <span>Lead Graphic Designer</span><span>Brand Identity</span><span>Campaign Design</span><span>Print Production</span><span>CorelDRAW Advanced</span><span>Adobe Photoshop</span><span>8+ Years Experience</span><span>100+ Creatives / Month</span><span>Pune · India</span><span>Available for Opportunities</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-eyebrow">Graphic Designer · Visualiser · Brand &amp; Campaign Designer</div>
+  <h1>Dipak<br><em>Jadhav</em></h1>
+  <p class="hero-role">Lead Graphic Designer</p>
+  <p class="hero-sub">Results-driven Senior Graphic Designer with 8+ years of expertise in branding, political &amp; corporate campaigns, and print production.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Years</div></div>
+    <div class="stat"><div class="stat-num">100+</div><div class="stat-label">Creatives / Month</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Companies</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Industries</div></div>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-label reveal">// Profile</div>
+  <h2 class="sec-title reveal">Career <em>Objective</em></h2>
+  <div class="sec-rule"></div>
+  <div class="about-grid">
+    <div class="about-cell reveal-left">
+      <div class="about-cell-label">About Me</div>
+      <p>Results-driven Senior Graphic Designer with 8+ years of expertise in branding, political &amp; corporate campaigns, and print production.</p>
+      <br/>
+      <p>Proven leader delivering high-impact creative solutions with speed and precision. Currently leading a 3–5 member design team at Sakav Media, delivering 100+ campaign creatives monthly across political and corporate projects.</p>
+    </div>
+    <div class="about-cell reveal-right">
+      <ul class="skills-list">
+        <li>Visual Communication &amp; Creative Direction</li>
+        <li>Corporate &amp; Political Campaign Design</li>
+        <li>Event &amp; Campaign Branding</li>
+        <li>Logo &amp; Product Design</li>
+        <li>Social Media &amp; Digital Campaign Creatives</li>
+        <li>UI Layout &amp; Business Collaterals</li>
+        <li>Print &amp; Production Artwork</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-label reveal">// Career History</div>
+  <h2 class="sec-title reveal">Work <em>Experience</em></h2>
+  <div class="sec-rule"></div>
+  <div class="exp-list stagger">
+
+    <div class="exp-item">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="exp-company">Sakav Media</div>
+          <div class="exp-role">Lead Graphic Designer</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+          <span class="exp-badge">Current</span>
+          <span class="exp-period">Oct 2024 – Present</span>
+        </div>
+      </div>
+      <div class="exp-dots">
+        <div class="exp-dot">Led and structured a 3–5 member design team in a startup setup</div>
+        <div class="exp-dot">Delivered 100+ campaign creatives monthly across political &amp; corporate projects</div>
+        <div class="exp-dot">Reduced turnaround time by streamlining internal workflow</div>
+        <div class="exp-dot">Directed end-to-end campaign execution from concept to final deployment</div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="exp-company">Deciphercloud Pvt. Ltd.</div>
+          <div class="exp-role">Graphic Designer</div>
+        </div>
+        <span class="exp-period">Nov 2022 – Sept 2024</span>
+      </div>
+      <div class="exp-dots">
+        <div class="exp-dot">Managed end-to-end design lifecycle across digital, UI, and branding projects</div>
+        <div class="exp-dot">Delivered multi-platform marketing campaigns under tight deadlines</div>
+        <div class="exp-dot">Maintained brand consistency across 5+ marketing channels</div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="exp-company">Pariwartan Media Solutions</div>
+          <div class="exp-role">Graphic Designer</div>
+        </div>
+        <span class="exp-period">Dec 2020 – Oct 2022</span>
+      </div>
+      <div class="exp-dots">
+        <div class="exp-dot">Managed complete packaging and print production lifecycle from concept to final delivery</div>
+        <div class="exp-dot">Ensured prepress accuracy, colour calibration, and production quality control</div>
+        <div class="exp-dot">Coordinated with vendors and supervised print execution for timely dispatch</div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="exp-company">The Pristine Horizon</div>
+          <div class="exp-role">Jr. Graphic Designer</div>
+        </div>
+        <span class="exp-period">Nov 2017 – Nov 2019</span>
+      </div>
+      <div class="exp-dots">
+        <div class="exp-dot">Handled real estate branding, signage, and marketing collaterals from concept to installation</div>
+        <div class="exp-dot">Managed vendor sourcing and on-site branding supervision</div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="exp-company">Vinayak Art &amp; Printing</div>
+          <div class="exp-role">Intern Graphic Designer</div>
+        </div>
+        <span class="exp-period">2015 – 2016</span>
+      </div>
+      <div class="exp-dots">
+        <div class="exp-dot">Design, print production &amp; prepress support</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label reveal">// Capabilities</div>
+  <h2 class="sec-title reveal">Technical <em>Skills</em></h2>
+  <div class="sec-rule"></div>
+  <div class="skills-cards">
+
+    <div class="skill-card">
+      <div class="skill-card-title">Software</div>
+      <div class="skill-card-divider"></div>
+      <div class="skill-back-tags">
+        <span class="skill-back-tag">CorelDRAW</span>
+        <span class="skill-back-tag">Adobe Photoshop</span>
+        <span class="skill-back-tag">Adobe Illustrator</span>
+        <span class="skill-back-tag">WordPress Elementor</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-title">AI <span class="amp">&amp;</span> Productivity</div>
+      <div class="skill-card-divider"></div>
+      <div class="skill-back-tags">
+        <span class="skill-back-tag">ChatGPT</span>
+        <span class="skill-back-tag">Gemini</span>
+        <span class="skill-back-tag">Claude AI</span>
+        <span class="skill-back-tag">Perplexity</span>
+        <span class="skill-back-tag">Leonardo</span>
+        <span class="skill-back-tag">Freepik AI</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-title">Professional Skills</div>
+      <div class="skill-card-divider"></div>
+      <div class="skill-back-tags">
+        <span class="skill-back-tag">Team Leadership</span>
+        <span class="skill-back-tag">Client Handling</span>
+        <span class="skill-back-tag">Stakeholder Coordination</span>
+        <span class="skill-back-tag">Creative Concept Dev.</span>
+        <span class="skill-back-tag">Deadline Management</span>
+        <span class="skill-back-tag">High-Volume Delivery</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-title">Print <span class="amp">&amp;</span> Production</div>
+      <div class="skill-card-divider"></div>
+      <div class="skill-back-tags">
+        <span class="skill-back-tag">Prepress Knowledge</span>
+        <span class="skill-back-tag">Colour Calibration</span>
+        <span class="skill-back-tag">Vendor Coordination</span>
+        <span class="skill-back-tag">Print Production Artwork</span>
+        <span class="skill-back-tag">Large Format Design</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="sec-label reveal">// Academic Background</div>
+  <h2 class="sec-title reveal"><em>Education</em></h2>
+  <div class="sec-rule"></div>
+  <div class="edu-list stagger">
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">B.Sc. Computer Science</div>
+        <div class="edu-school">D.Y. Patil ACS College, Pimpri, Pune</div>
+      </div>
+      <div class="edu-year">2013 – 2016</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">Intermediate — Science</div>
+        <div class="edu-school">MM College, Kalewadi, Pune</div>
+      </div>
+      <div class="edu-year">2011 – 2012</div>
+    </div>
+    <div class="edu-item">
+      <div>
+        <div class="edu-degree">Schooling (SSC)</div>
+        <div class="edu-school">Shri Fatechand Mahavidyalay, Chinchwad, Pune</div>
+      </div>
+      <div class="edu-year">2009 – 2010</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO CTA -->
+<div class="cta-section">
+  <div class="cta-ghost">PORTFOLIO</div>
+  <p class="cta-label">// See the Work</p>
+  <h2 class="cta-title">8 Years of Work.<br><em>All in One Place.</em></h2>
+  <p class="cta-body">Campaign creatives, rebranding projects, event kits, UI work &#8212; take a look before you decide.</p>
+  <a class="cta-btn" href="https://www.behance.net/dipakjadha5eab" target="_blank">
+    View Behance Portfolio
+    <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-label reveal">// Get in Touch</div>
+  <h2 class="sec-title reveal">Let's <em>Connect</em></h2>
+  <div class="sec-rule"></div>
+  <div class="contact-grid stagger">
+    <div class="contact-cell">
+      <div class="c-label">Email</div>
+      <div class="c-val">dipakjadhavj&#64;gmail.com</div>
+    </div>
+    <div class="contact-cell">
+      <div class="c-label">Phone / WhatsApp</div>
+      <div class="c-val">+91 93256 00528</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHONE POPUP -->
+<div class="popup-overlay" id="phonePopup" onclick="closeOnOverlay(event)">
+  <div class="popup">
+    <button class="popup-close" onclick="closePopup()">&#215;</button>
+    <div class="popup-label">Contact Dipak</div>
+    <div class="popup-number">+91 93256 00528</div>
+    <div class="popup-actions">
+      <a class="popup-btn call" href="tel:+919325600528">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 015 12.84a19.79 19.79 0 01-3.07-8.67A2 2 0 013.92 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Dial +91 93256 00528
+      </a>
+      <a class="popup-btn whatsapp" href="https://wa.me/919325600528?text=Hi%20Dipak%2C%20I%20came%20across%20your%20profile%20and%20would%20like%20to%20connect%20regarding%20a%20design%20opportunity." target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Message on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="f-name">Dipak Madhukar Jadhav</span>
+  <span class="f-note">Lead Graphic Designer &middot; Pune, India &middot; DOB 03/02/1995</span>
+</footer>
+
+<script>
+function scrollTo(id){
+  var target=document.getElementById(id);
+  if(!target) return;
+  var top=target.getBoundingClientRect().top+window.pageYOffset-110;
+  window.scrollTo({top:top,behavior:'smooth'});
+}
+
+// Skill card entrance
+var cardObserver=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.classList.add('card-visible');
+    }
+  });
+},{threshold:0.2});
+document.querySelectorAll('.skill-card').forEach(function(card){
+  cardObserver.observe(card);
+});
+
+function openPopup(){document.getElementById('phonePopup').classList.add('open');document.body.style.overflow='hidden';}
+function closePopup(){document.getElementById('phonePopup').classList.remove('open');document.body.style.overflow='';}
+function closeOnOverlay(e){if(e.target===document.getElementById('phonePopup'))closePopup();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closePopup();});
+
+// Scroll reveal
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      // animate sec-rule width
+      if(entry.target.classList.contains('sec-rule')) entry.target.style.width='36px';
+    }
+  });
+},{threshold:0.15});
+
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.stagger,.sec-rule').forEach(function(el){
+  observer.observe(el);
+});
+
+// Stat counter animation
+function animateCounter(el,target,suffix){
+  var start=0;var duration=1200;var step=target/60;var current=0;
+  var timer=setInterval(function(){
+    current+=step;
+    if(current>=target){current=target;clearInterval(timer);}
+    el.textContent=Math.floor(current)+(suffix||'');
+  },duration/60);
+}
+var statsObserver=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){
+      var nums=entry.target.querySelectorAll('.stat-num');
+      var data=[{v:8,s:'+'},{v:100,s:'+'},{v:5,s:''},{v:5,s:'+'}];
+      nums.forEach(function(el,i){if(data[i])animateCounter(el,data[i].v,data[i].s);});
+      statsObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:0.3});
+var statsEl=document.querySelector('.hero-stats');
+if(statsEl)statsObserver.observe(statsEl);
+</script>
+</body>
+</html>
